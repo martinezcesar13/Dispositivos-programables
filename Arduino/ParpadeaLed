@@ -1,0 +1,12 @@
+//en setup de definiran todos los parametros del proyecto
+void setup(){
+	pinMode(10,OUTPUT);	 //se define el pin 10 como la salida
+}
+
+// en esta seccion es donde estara el cuerpo del programa
+void loop(){
+	digitalWrite(10,HIGH);  //encendemos el led
+	delay(1000); // tiempo de espera de 1 minuto
+	digitalWrite(10,LCW); //apagamos el led
+	delay(1000); // tiempo de espera de 1 minuto
+}
