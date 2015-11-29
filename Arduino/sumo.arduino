@@ -1,0 +1,126 @@
+#define Motor1_2_Pin1 1
+#define Motor1_2_Pin2 2
+
+#define Motor3_4_Pin1 3
+#define Motor3_4_Pin2 4
+
+#define Sharp_Pin A0
+
+#define Tcrt1_Pin 5
+#define Tcrt2_Pin 6
+
+boolean Tcrt1;
+boolean Tcrt2;
+int Sharp;
+void setup()
+
+{
+  pinMode(1,OUTPUT);
+  pinMode(2,OUTPUT);
+  pinMode(3,OUTPUT);
+  pinMode(4,OUTPUT);
+  pinMode(5,INPUT);
+  pinMode(6,INPUT);
+  
+  Serial.begin(9600);
+
+}
+  void(* resetFunc) (void) = 0;       
+  void loop()
+  
+  {
+    delay(5000);
+    void ReadSensors();
+    
+    while(Sharp>500)
+    {
+    void ReadSensors();
+    void turnleft();
+    if(Tcrt2==1)
+    {
+    void Brake();
+    delay(3000);
+    resetFunc();
+    }
+    }
+     void Forward();
+    
+    
+      while (!(Tcrt1==1))
+      {
+    void ReadSensors();
+     if(Tcrt2==1)
+    {
+    void Brake();
+    delay(3000);
+    resetFunc();
+    }
+  
+      }
+  void Reverse();
+  delay(2000);
+  
+  }
+
+  
+  void turnleft()
+  {
+  digitalWrite(1,1);
+    digitalWrite(2,0);
+    digitalWrite(3,0);
+    digitalWrite(4,1);
+  }
+  
+void turnright()
+  {
+  digitalWrite(1,0);
+    digitalWrite(2,1);
+    digitalWrite(3,1);
+    digitalWrite(4,0);
+  }
+  
+  void Forward()
+  {
+  digitalWrite(1,1);
+    digitalWrite(2,0);
+    digitalWrite(3,1);
+    digitalWrite(4,0);
+  }
+
+
+
+void Reverse()
+  {
+  digitalWrite(1,0);
+    digitalWrite(2,1);
+    digitalWrite(3,0);
+    digitalWrite(4,1);
+  }
+
+void Brake()
+  {
+  digitalWrite(1,1);
+    digitalWrite(2,1);
+    digitalWrite(3,1);
+    digitalWrite(4,1);
+  }
+  
+  
+  void Stop()
+  {
+  digitalWrite(1,0);
+    digitalWrite(2,0);
+    digitalWrite(3,0);
+    digitalWrite(4,0);
+    Serial.println("Stop");
+  }
+
+void ReadSensors()
+{
+  Tcrt1=digitalRead(5);
+  Serial.print("Tcrt1=");
+  Serial.println(Tcrt1);
+  Tcrt2=digitalRead(6);
+  Sharp=analogRead(A0);
+  
+}
